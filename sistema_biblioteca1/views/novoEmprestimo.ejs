@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Empréstimo</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Registrar Novo Empréstimo</h1>
+
+        <!-- Botão para voltar -->
+        <button onclick="window.location.href='/emprestimos'">Voltar para a Lista de Empréstimos</button>
+
+        <!-- Formulário -->
+        <form action="/emprestimos" method="post">
+            <label for="livro_id">Livro:</label>
+            <select name="livro_id" id="livro_id" required>
+                <% livros.forEach((livro) => { %>
+                    <option value="<%= livro.id %>"><%= livro.titulo %></option>
+                <% }); %>
+            </select>
+
+            <label for="cliente_id">Cliente:</label>
+            <select name="cliente_id" id="cliente_id" required>
+                <% clientes.forEach((cliente) => { %>
+                    <option value="<%= cliente.id %>"><%= cliente.nome %></option>
+                <% }); %>
+            </select>
+
+            <label for="data_emprestimo">Data de Empréstimo:</label>
+            <input type="date" name="data_emprestimo" id="data_emprestimo" required>
+
+            <label for="data_devolucao">Data de Devolução:</label>
+            <input type="date" name="data_devolucao" id="data_devolucao" required>
+
+            <button type="submit">Registrar Empréstimo</button>
+        </form>
+    </div>
+</body>
+</html>

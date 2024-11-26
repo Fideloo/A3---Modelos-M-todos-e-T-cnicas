@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cliente</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Editar Cliente</h1>
+    <form action="/clientes/editar/<%= cliente.id %>" method="post">
+        <input type="text" name="nome" value="<%= cliente.nome %>" required><br>
+        <input type="text" name="cpf" value="<%= cliente.cpf %>" required><br>
+        <input type="text" name="endereco" value="<%= cliente.endereco %>" required><br>
+        <input type="text" name="telefone" value="<%= cliente.telefone %>" required><br>
+        <button type="submit">Salvar Alterações</button>
+    </form>
+    <button onclick="window.location.href='/clientes'">Cancelar</button>
+</body>
+</html>

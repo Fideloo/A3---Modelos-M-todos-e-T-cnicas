@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empréstimos</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Empréstimos</h1>
+
+        <!-- Botões -->
+        <button onclick="window.location.href='/dashboard'">Voltar para o Dashboard</button>
+        <button onclick="window.location.href='/emprestimos/novo'">Registrar Novo Empréstimo</button>
+
+        <!-- Tabela de empréstimos -->
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Livro</th>
+                    <th>Cliente</th>
+                    <th>Data de Empréstimo</th>
+                    <th>Data de Devolução</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% emprestimos.forEach((emprestimo) => { %>
+                    <tr>
+                        <td><%= emprestimo.id %></td>
+                        <td><%= emprestimo.livro %></td>
+                        <td><%= emprestimo.cliente %></td>
+                        <td><%= emprestimo.data_emprestimo %></td>
+                        <td><%= emprestimo.data_devolucao %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+/* Estilo global */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Cabeçalho */
+h1, h2 {
+    color: #412020;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Botões */
+button, .btn {
+    background-color: #412020;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover, .btn:hover {
+    background-color: #6a2f2f;
+}
+
+button:disabled {
+    background-color: #a5a5a5;
+    cursor: not-allowed;
+}
+
+/* Tabelas */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #412020;
+    color: #fff;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #f5e5e5;
+}
+
+/* Formulários */
+form {
+    width: 50%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
+    color: #412020;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form input:focus, form select:focus {
+    outline: none;
+    border-color: #412020;
+    box-shadow: 0 0 5px rgba(65, 32, 32, 0.5);
+}
+
+/* Links */
+a {
+    color: #412020;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #6a2f2f;
+}
+
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}

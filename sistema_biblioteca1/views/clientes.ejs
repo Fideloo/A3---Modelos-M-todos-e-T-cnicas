@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Clientes</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Gerenciamento de Clientes</h1>
+
+    <!-- Botão para voltar ao dashboard -->
+    <button onclick="window.location.href='/dashboard'">Voltar para o Dashboard</button>
+
+    <h2>Cadastrar Novo Cliente</h2>
+    <form action="/clientes" method="post">
+        <input type="text" name="nome" placeholder="Nome Completo" required><br>
+        <input type="text" name="cpf" placeholder="CPF" required><br>
+        <input type="text" name="endereco" placeholder="Endereço" required><br>
+        <input type="text" name="telefone" placeholder="Telefone" required><br>
+        <button type="submit">Cadastrar Cliente</button>
+    </form>
+
+    <h2>Clientes Cadastrados</h2>
+    <ul>
+        <% clientes.forEach((cliente) => { %>
+            <li>
+                <%= cliente.nome %> - <%= cliente.cpf %> - <%= cliente.telefone %>
+                <button onclick="window.location.href='/clientes/editar/<%= cliente.id %>'">Editar</button>
+                <form action="/clientes/deletar/<%= cliente.id %>" method="post" style="display:inline;">
+                    <button type="submit">Excluir</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>

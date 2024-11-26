@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Livro</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Editar Livro</h1>
+    <form action="/livros/editar/<%= livro.id %>" method="post">
+        <input type="text" name="titulo" value="<%= livro.titulo %>" required>
+        <input type="text" name="autor" value="<%= livro.autor %>" required>
+        <input type="number" name="ano" value="<%= livro.ano %>" required>
+        <input type="text" name="genero" value="<%= livro.genero %>" required>
+        <button type="submit">Salvar Alterações</button>
+    </form>
+    <button onclick="window.location.href='/livros'">Cancelar</button>
+</body>
+</html>
